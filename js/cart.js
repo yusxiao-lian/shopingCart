@@ -210,8 +210,13 @@ $(function(){
                 }
             })
             //更新数据
+           
             var json = JSON.stringify(localproduct);
-            localStorage.setItem('localproduct',json);      
+            localStorage.setItem('localproduct',json); 
+            if(localproduct.length === 0){
+                localStorage.clear();
+                history.go(0);
+            }     
             calcTotal();
           });
     })
