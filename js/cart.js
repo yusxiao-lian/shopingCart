@@ -167,15 +167,17 @@ $(function(){
     $('.item-list').on('blur','.number',function(){
         var count = $(this).val();
         //分开转换
-        count = parseInt(count);
-        // console.log(count);
+        
+        
+        
         //如果输入的不是数字或者是负数
-        if(!(/^\d{1,}$/.test(count)) || count <= 0){
+        if(!(/^\d+$/.test(count)) || count <= 0){
             var old = $(this).attr('data-old');
             $(this).val(old);
             alert('请输入正确的商品数量哦');
             return;
         }
+        count = parseInt(count);
         // 当前商品的pid
         
         var pid = $(this).parents('.item').attr('data-id');
